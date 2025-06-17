@@ -28,3 +28,5 @@ Organizers: Alicia Pose Díez de la Lastra and Javier Pascau
 📩 For questions, feel free to contact us at: apose@ing.uc3m.es
 
 ![InstitutionalLogos_Horizontal](https://github.com/user-attachments/assets/da0d0bf1-c8f3-4c97-b2c7-e2df6b681c4d)
+*This workshop is part of the project PID2023-149604OB-I00 (funded by AEI/10.13039/501100011033/FEDER, EU) and MAGERIT-CM (TEC-
+2024/COM-44, funded by the Comunidad de Madrid under programas de actividades de I+D en Tecnologías 2024).*
