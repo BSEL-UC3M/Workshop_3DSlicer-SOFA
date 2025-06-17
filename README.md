@@ -1,5 +1,5 @@
 # Workshop 3DSlicer - SOFA
-*This GitHub repository complements the ![workshop 3D Slicer - SOFA](https://igt.uc3m.es/2025/05/27/new-workshop-on-3d-slicer-and-sofa/) organized at Universidad Carlos III de Madrid by ![the IGT group](https://igt.uc3m.es/).*
+*This GitHub repository complements the [workshop 3D Slicer - SOFA](https://igt.uc3m.es/2025/05/27/new-workshop-on-3d-slicer-and-sofa/) organized at Universidad Carlos III de Madrid by [the IGT group](https://igt.uc3m.es/).*
 
 The workshop is focused on **3D Slicer and the SOFA framework**, two powerful open-source tools widely used in digital health and biomedical research.
 
