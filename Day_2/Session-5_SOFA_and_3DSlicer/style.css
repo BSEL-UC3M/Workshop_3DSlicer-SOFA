@@ -1,0 +1,73 @@
+:root {
+    --container-width: 50%; /* Default value */
+}
+
+p.date{
+    display:none;
+}
+
+ul,
+li{
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important; /* Align items along the cross axis (horizontal in column layout) */
+  justify-content: center !important; /* Align items along the main axis (vertical in column layout) */
+}
+
+.horizontal{
+  flex-direction: row !important;
+  align-items: center !important; /* Align items along the cross axis (horizontal in column layout) */
+  justify-content: center !important; /* Align items along the main axis (vertical in column layout) */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-height:100%;
+  width: var(--container-width);
+}
+
+.container.left {
+  text-align: left !important;
+}
+
+.container.center{
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.figure,
+.figure p{
+  width:100%;
+}
+
+#slide-simulate_or_not .figure p img{
+  width:40%;
+}
+
+#slide-simulate_or_not_2 h2{
+  display:none;
+}
+
+#slide-sofa_surgery video
+{
+  width: 80%;
+}
+
+#slide-slicer_sofa_features .figure p img{
+  width: 60%;
+}
+
+
+#slide-slicer_sofa_architecture .figure p img{
+  width:80%;
+}
+
+.org-src-container{
+    width: 100%;
+}

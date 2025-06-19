@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920mm"
+   height="1080mm"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="history_open_source_ivs.svg"
+   inkscape:export-filename="history_open_source_ivs_5.png"
+   inkscape:export-xdpi="26.200001"
+   inkscape:export-ydpi="26.200001"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.26207037"
+     inkscape:cx="915.78457"
+     inkscape:cy="1024.534"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="4971.9471"
+       y="759.33804"
+       width="1518.6761"
+       height="213.68307"
+       id="rect9" />
+    <marker
+       style="overflow:visible"
+       id="Dot"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7-2-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0-2-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7-2-3-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0-2-1-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7-2-3-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0-2-1-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7-2-3-7-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0-2-1-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Dot-9-7-2-3-6-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17-7-0-2-1-1-7" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(37.890057,-73.741341)">
+    <g
+       id="g2">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9)"
+         d="m 405.3067,133.05077 v 81.50176 h 23.48128"
+         id="path1-6"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="439.31552"
+         y="207.54762"
+         id="text1-7-7"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="207.54762"
+           id="tspan2-6">Development of</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="230.37288"
+           id="tspan4">NorMIT Plan</tspan></text>
+    </g>
+    <g
+       id="g2-3"
+       transform="translate(438.53302,-2.0542726)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7)"
+         d="m 405.3067,133.05077 v 81.50176 h 23.48128"
+         id="path1-6-6"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="439.31552"
+         y="207.54762"
+         id="text1-7-7-0"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="207.54762"
+           id="tspan4-2">RCN: ALive</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="230.37288"
+           id="tspan3">First Project Week</tspan></text>
+    </g>
+    <g
+       id="g2-3-9"
+       transform="translate(858.45284,-2.0542726)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7-2)"
+         d="m 405.3067,133.05077 v 81.50176 h 23.48128"
+         id="path1-6-6-7"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="439.31552"
+         y="207.54762"
+         id="text1-7-7-0-3"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="207.54762"
+           id="tspan3-1">OUS Coordinator</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="230.37288"
+           id="tspan5">of ProjectWeek</tspan></text>
+    </g>
+    <g
+       id="g2-3-9-4"
+       transform="translate(1077.5091,-2.0542726)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7-2-3)"
+         d="m 405.3067,133.05077 v 81.50176 h 23.48128"
+         id="path1-6-6-7-7"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="439.31552"
+         y="207.54762"
+         id="text1-7-7-0-3-8"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="207.54762"
+           id="tspan6">Slicer-Liver</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="230.37288"
+           id="tspan7">Extension</tspan></text>
+    </g>
+    <g
+       id="g2-3-9-4-5"
+       transform="translate(1077.2628,48.638263)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7-2-3-7)"
+         d="m 405.3067,121.40903 v 81.50176 h 23.48128"
+         id="path1-6-6-7-7-6"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="438.59283"
+         y="206.74628"
+         id="text1-7-7-0-3-8-29"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="438.59283"
+           y="206.74628"
+           id="tspan7-2">RCN: OpenLiverLab</tspan></text>
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7-2-3-7-9)"
+         d="m 405.02308,155.7022 v 81.50176 h 23.48128"
+         id="path1-6-6-7-7-6-0"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="438.3092"
+         y="232.57291"
+         id="text1-7-7-0-3-8-29-6"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="438.3092"
+           y="232.57291"
+           id="tspan7-2-2">ALive exchange</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="438.3092"
+           y="255.39816"
+           id="tspan9">Queen's Univ</tspan></text>
+    </g>
+    <g
+       id="g2-3-9-4-6"
+       transform="translate(1291.5964,-2.0542726)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7-2-3-6)"
+         d="m 405.3067,133.05077 v 81.50176 h 23.48128"
+         id="path1-6-6-7-7-3"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="439.31552"
+         y="207.54762"
+         id="text1-7-7-0-3-8-2"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="207.54762"
+           id="tspan5-5-6">Slicer-SOFA</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="230.37288"
+           id="tspan8">Extension</tspan></text>
+    </g>
+    <g
+       id="g2-3-9-4-6-2"
+       transform="translate(1291.3826,47.92229)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot-9-7-2-3-6-8)"
+         d="m 405.3067,133.05077 v 81.50176 h 23.48128"
+         id="path1-6-6-7-7-3-0"
+         sodipodi:nodetypes="ccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+         x="439.31552"
+         y="207.54762"
+         id="text1-7-7-0-3-8-2-2"><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="207.54762"
+           id="tspan8-7">NextGenIGT</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+           x="439.31552"
+           y="230.37288"
+           id="tspan11">COST Proposal</tspan></text>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.96151;stroke-linecap:round;stroke-opacity:1;marker-end:url(#Dot)"
+       d="m -25.409191,133.05077 v 81.50176 h 23.4812826"
+       id="path1"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:18.2602px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226;stroke-linecap:round"
+       x="11.282702"
+       y="208.54294"
+       id="text1-7"><tspan
+         sodipodi:role="line"
+         id="tspan1-1"
+         style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+         x="11.282702"
+         y="208.54294">Adoption</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:2.71226"
+         x="11.282702"
+         y="231.36819"
+         id="tspan2">of 3D Slicer</tspan></text>
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1"
+       width="204.91872"
+       height="102.45936"
+       x="-37.890057"
+       y="73.741394"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6"
+       width="204.91872"
+       height="102.45936"
+       x="176.52657"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-6"
+       width="204.91872"
+       height="102.45936"
+       x="390.94318"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-6-4"
+       width="204.91872"
+       height="102.45936"
+       x="605.3598"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-6-4-6"
+       width="204.91872"
+       height="102.45936"
+       x="819.77649"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-4"
+       width="204.91872"
+       height="102.45936"
+       x="1034.193"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-6-5"
+       width="204.91872"
+       height="102.45936"
+       x="1248.6097"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-6-4-2"
+       width="204.91872"
+       height="102.45936"
+       x="1463.0262"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <rect
+       style="fill:#cae5b6;fill-opacity:1;stroke-width:1.96151;stroke-linecap:round"
+       id="rect1-6-6-4-6-5"
+       width="204.91872"
+       height="102.45936"
+       x="1677.443"
+       y="73.741341"
+       rx="0"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="64.836555"
+       y="144.37621"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="64.836555"
+         y="144.37621">2016</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="279.25317"
+       y="144.37614"
+       id="text1-4"><tspan
+         sodipodi:role="line"
+         id="tspan1-3"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="279.25317"
+         y="144.37614">2017</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="493.6698"
+       y="144.37614"
+       id="text1-4-6"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="493.6698"
+         y="144.37614">2018</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="708.08643"
+       y="144.37614"
+       id="text1-4-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8-4"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="708.08643"
+         y="144.37614">2019</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="922.50311"
+       y="144.37614"
+       id="text1-4-6-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8-4-8"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="922.50311"
+         y="144.37614">2020</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="1136.9197"
+       y="144.37614"
+       id="text1-4-6-1-6-6"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8-4-8-4"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="1136.9197"
+         y="144.37614">2021</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="1351.3364"
+       y="144.37614"
+       id="text1-4-6-1-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8-4-8-8"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="1351.3364"
+         y="144.37614">2022</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="1565.7529"
+       y="144.37614"
+       id="text1-4-6-1-6-2"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8-4-8-7"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="1565.7529"
+         y="144.37614">2023</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:53.4577px;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:7.94031;stroke-linecap:round"
+       x="1780.1697"
+       y="144.37614"
+       id="text1-4-6-1-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-8-4-8-0"
+         style="fill:#000000;fill-opacity:1;stroke-width:7.94031"
+         x="1780.1697"
+         y="144.37614">2024</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-37.890057,73.741341)"
+       id="text9"
+       style="font-weight:600;font-size:6.66667px;font-family:Dosis;-inkscape-font-specification:'Dosis Semi-Bold';text-align:center;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect9);display:inline;opacity:0.435981;fill:#000000;stroke:#000000;stroke-width:4.01386;stroke-linecap:round" />
+  </g>
+</svg>

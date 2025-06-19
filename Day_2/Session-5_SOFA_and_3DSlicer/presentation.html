@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/></head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="title_background.png"><p class="date">Created: 2025-06-18 Wed 16:58</p>
+</section>
+
+<section>
+<section id="slide-org20efdfc">
+<h2 id="org20efdfc">Introduction</h2>
+<div class="outline-text-2" id="text-org20efdfc">
+</div>
+</section>
+<section id="slide-org773c99c">
+<h3 id="org773c99c">Context: Image-Guided Therapies (I)</h3>
+
+<div id="org541fde3" class="figure">
+<p><img src="./img/scath2.png" alt="scath2.png" width="100%" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgdc6d470">
+<h3 id="orgdc6d470">Context: Image-Guided Therapies (II)</h3>
+
+<div id="orgceda921" class="figure">
+<p><img src="./img/scath.png" alt="scath.png" width="100%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org1fd2d67">
+<h3 id="org1fd2d67">Context: Image-Guided Therapies Workflow</h3>
+
+<div id="org9d8f240" class="figure">
+<p><img src="./img/igt_workflow.png" alt="igt_workflow.png" width="80%" />
+</p>
+</div>
+
+</section>
+<section id="slide-simulate_or_not" data-fullscreen>
+<h3 id="simulate_or_not">To simulate or not. That's the question</h3>
+
+<div id="org33e3dd8" class="figure">
+<p><img src="./img/to_simulate_or_not.webp" alt="to_simulate_or_not.webp" />
+</p>
+</div>
+
+</section>
+<section id="slide-simulate_or_not_2" data-fullscreen>
+<h3 id="simulate_or_not_2">To simulate or not. That's the question</h3>
+<div class="container horizontal" style="--container-width:100%;">
+
+<div class="container vertical" style="--container-width: 50%;">
+<p>
+<b><b>Simulations as accurate predictors</b></b>
+</p>
+<ul>
+<li>Difficulty to align initial conditions</li>
+<li>Difficulty to accurately model complex systems</li>
+<li>Computationally expensive</li>
+
+</ul>
+</div>
+
+<div class="container vertical" style="--container-width: 50%;">
+<p>
+<b><b>Simulations as providers of non-linear behavior</b></b>
+</p>
+<ul>
+<li>Non-linear better than linear</li>
+<li>Generating plausibility over reality</li>
+<li>Fast computation over precision</li>
+
+</ul>
+
+</div>
+</div>
+
+</section>
+<section id="slide-sofa_surgery" data-fullscreen>
+<h3 id="sofa_surgery">Example of SOFA providing non-linear behavior</h3>
+<video controls autoplay muted loop onloadeddata="this.playbackRate=1;">
+<source data-src="videos/sofa_surgery.mp4" type="video/mp4" />
+</video>
+<p>
+(Stephane Cotin et al.)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org9872947">
+<h2 id="org9872947">Mesh Models Generation</h2>
+<div class="outline-text-2" id="text-org9872947">
+</div>
+</section>
+<section id="slide-org32c4f7f">
+<h3 id="org32c4f7f">From Segmentation to 3D Models</h3>
+<div class="container horizontal" style="--container-width:100%;">
+
+<div class="container vertical" style="--container-width: 60%;">
+
+<div id="org75bbecd" class="figure">
+<p><img src="./img/igt_workflow_models.png" alt="igt_workflow_models.png" />
+</p>
+</div>
+</div>
+
+
+<div class="container vertical" style="--container-width: 40%;">
+<p>
+<b>Segmentations</b>
+</p>
+<ul>
+<li>Voxel-based objects</li>
+
+</ul>
+<p>
+<b>3D Surface models</b>
+</p>
+<ul>
+<li>Triangle-based meshes</li>
+<li>Represent the shell of objects</li>
+<li>Useful for visualization</li>
+
+</ul>
+<p>
+<b>3D Tetrahedral meshes</b>
+</p>
+<ul>
+<li>Tetrahedra-based (i.e., pyramid)</li>
+<li>Useful for simulation</li>
+
+</ul>
+
+</div>
+</div>
+
+</section>
+<section id="slide-orge646093">
+<h3 id="orge646093">From Segmentation to 3D Models</h3>
+
+<div id="orgb76de66" class="figure">
+<p><img src="./img/seg2mesh.png" alt="seg2mesh.png" width="65%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org8374d30">
+<h3 id="org8374d30">From Segmentation to 3D Models</h3>
+<ul>
+<li>Simulation applications could use a combination of models
+<ul>
+<li>Simple tetrahedral meshes (or sparse grids) for computations</li>
+<li>Translation of results over to more detailed surface meshes</li>
+
+</ul></li>
+<li>There are no definitive methods
+<ul>
+<li>Variability of underlying data (e.g., quality of segmentation)</li>
+<li>Purpose of the output mesh (e.g., visualization, computation, simulation)</li>
+
+</ul></li>
+<li>Post processing is often applied
+<ul>
+<li>Smoothing</li>
+<li>Decimation</li>
+
+</ul></li>
+
+</ul>
+<p>
+<b>Tips</b>
+</p>
+<ul>
+<li>For segmentations, watch for noise particles, non-connected components and sharp edges.</li>
+<li>For mesh models, watch for topological correctness, volumes/areas, regularity of triangles.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org11f1d8b" data-fullscreen>
+<h2 id="org11f1d8b">SlicerSOFA</h2>
+</section>
+<section id="slide-slicer_sofa_features" data-fullscreen>
+<h3 id="slicer_sofa_features">SlicerSOFA Features</h3>
+
+<div id="orgd38da40" class="figure">
+<p><img src="./img/slicer_sofa_features.png" alt="slicer_sofa_features.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-slicer_sofa_video" data-fullscreen>
+<h3 id="slicer_sofa_video">SlicerSOFA</h3>
+<video controls autoplay muted loop onloadeddata="this.playbackRate=1;">
+<source data-src="videos/slicersofa.mp4" type="video/mp4" />
+</video>
+
+</section>
+<section id="slide-slicer_sofa_slicer_extension" data-fullscreen>
+<h3 id="slicer_sofa_slicer_extension">What is SlicerSOFA?</h3>
+<div class="container horizontal" style="--container-width:100%;">
+
+<div class="container vertical" style="--container-width: 40%;">
+
+<div id="orgcd98cf8" class="figure">
+<p><img src="./img/slicer_sofa_extension_manager.png" alt="slicer_sofa_extension_manager.png" />
+</p>
+</div>
+</div>
+
+
+<div class="container vertical" style="--container-width: 60%;">
+<p>
+<b>SlicerSOFA is a 3D Slicer Extension</b>
+</p>
+<ul>
+<li>Open-source: BSD and LGPL licenses</li>
+<li>Available through the <b>Slicer Extension Manager</b> as downloadable binary</li>
+<li>Source code available at <a href="https://github.com/Slicer/SlicerSOFA">https://github.com/Slicer/SlicerSOFA</a></li>
+<li>Issue tracker at <a href="https://github.com/Slicer/SlicerSOFA/issues">https://github.com/Slicer/SlicerSOFA/issues</a></li>
+
+</ul>
+
+</div>
+</div>
+
+</section>
+<section id="slide-slicer_sofa_architecture" data-fullscreen>
+<h3 id="slicer_sofa_architecture">SlicerSOFA Architecture</h3>
+
+<div id="orga21207f" class="figure">
+<p><img src="./img/architecture.png" alt="architecture.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org84bd3a5">
+<h3 id="org84bd3a5">SlicerSOFA Development Status (06/2025)</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">SOFA Version</th>
+<th scope="col" class="org-left">Windows</th>
+<th scope="col" class="org-left">Linux</th>
+<th scope="col" class="org-left">MacOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Slicer v5.8.1 (stable)</td>
+<td class="org-left">v24.06</td>
+<td class="org-left">Dev+Pack</td>
+<td class="org-left">Dev+Pack</td>
+<td class="org-left">Dev only</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Slicer v5.9 (preview)</b></td>
+<td class="org-left">v24.06</td>
+<td class="org-left">Dev+Pack</td>
+<td class="org-left">Dev+Pack</td>
+<td class="org-left">Dev only</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<a href="https://github.com/Slicer/SlicerSOFA">https://github.com/Slicer/SlicerSOFA</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org088357a">
+<h2 id="org088357a">Practical SlicerSOFA</h2>
+<div class="outline-text-2" id="text-org088357a">
+</div>
+</section>
+<section id="slide-orgbbd4261">
+<h3 id="orgbbd4261">Integrating Slicer and SOFA</h3>
+<div class="outline-text-3" id="text-orgbbd4261">
+</div>
+</section>
+<section id="slide-orgfb8fadf" data-fullscreen>
+<h4 id="orgfb8fadf">Integrating Slicer and SOFA (I)</h4>
+<div class="container horizontal" style="--container-width:100%;">
+
+<div class="container vertical" style="--container-width: 50%;">
+
+
+<div id="orgc667aee" class="figure">
+<p><img src="./img/integrating_slicer_sofa_0.png" alt="integrating_slicer_sofa_0.png" />
+</p>
+</div>
+</div>
+
+<div class="container vertical" style="--container-width: 50%;">
+<ul>
+<li>Everything runs in the Slicer process</li>
+<li>Slicer data and SOFA data are communicated using <code>numpy arrays</code> as common language:
+<ul>
+<li>Efficient</li>
+<li>Powerful</li>
+<li>Guarantees contiguous memory</li>
+
+</ul></li>
+
+</ul>
+</div>
+</div>
+
+
+</section>
+<section id="slide-org2d522fe" data-fullscreen>
+<h4 id="org2d522fe">Integrating Slicer and SOFA (II)</h4>
+
+<div id="orgad4dc93" class="figure">
+<p><img src="./img/integrating_slicer_sofa_1.png" alt="integrating_slicer_sofa_1.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgd505829" data-fullscreen>
+<h3 id="orgd505829">Understanding Data Components in 3D <b>*</b> Understanding Data Components in 3D Slicer: MRML (I)</h3>
+<div class="container horizontal" style="--container-width:100%;">
+
+<div class="container vertical" style="--container-width: 50%;">
+
+<ul>
+<li><b><b>Medical Reality Modeling Language (MRML)</b></b>
+<ul>
+<li>Data model to represent all data sets used in medical software applications</li>
+
+</ul></li>
+
+<li><b><b>MRML Scene</b></b>
+<ul>
+<li>Contains a list of <b><b>MRML Nodes</b></b></li>
+<li>Nodes can reference (link to) each other</li>
+
+</ul></li>
+
+</ul>
+</div>
+
+<div class="container vertical" style="--container-width: 50%;">
+
+<div id="org9eee8dd" class="figure">
+<p><img src="./img/mrmlscene_0.png" alt="mrmlscene_0.png" />
+</p>
+</div>
+</div>
+</div>
+
+</section>
+<section id="slide-orgb3e6d05" data-fullscreen>
+<h4 id="orgb3e6d05">Understanding Data Components in 3D Slicer: MRML (II)</h4>
+<div class="container horizontal" style="--container-width:100%;">
+
+<div class="container vertical" style="--container-width: 50%;">
+
+<ul>
+<li><b><b>Medical Reality Modeling Language (MRML)</b></b>
+<ul>
+<li>Data model to represent all data sets used in medical software applications</li>
+
+</ul></li>
+
+<li><b><b>MRML Scene</b></b>
+<ul>
+<li>Contains a list of <b><b>MRML Nodes</b></b></li>
+<li>Nodes can reference (link to) each other</li>
+
+</ul></li>
+
+</ul>
+</div>
+
+<div class="container vertical" style="--container-width: 50%;">
+
+<div id="orgb7f8d61" class="figure">
+<p><img src="./img/mrmlscene_1.png" alt="mrmlscene_1.png" />
+</p>
+</div>
+</div>
+</div>
+
+</section>
+<section id="slide-org0b52884" data-fullscreen>
+<h4 id="org0b52884">Understanding Data Components in 3D Slicer: MRML (III)</h4>
+<div class="container horizontal" style="--container-width:100%;">
+<div class="container vertical" style="--container-width: 50%;">
+
+<ul>
+<li><b><b>Medical Reality Modeling Language (MRML)</b></b>
+<ul>
+<li>Data model to represent all data sets used in medical software applications</li>
+
+</ul></li>
+
+<li><b><b>MRML Scene</b></b>
+<ul>
+<li>Contains a list of <b><b>MRML Nodes</b></b></li>
+<li>Nodes can reference (link to) each other</li>
+
+</ul></li>
+
+</ul>
+</div>
+
+<div class="container vertical" style="--container-width: 50%;">
+
+
+<div id="org3621f7e" class="figure">
+<p><img src="./img/mrmlscene_2.png" alt="mrmlscene_2.png" />
+</p>
+</div>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org6335585" data-fullscreen>
+<h4 id="org6335585">Understanding Data Components in 3D Slicer: MRML (IV)</h4>
+<div class="container horizontal" style="--container-width:100%;">
+<div class="container vertical" style="--container-width: 40%;">
+
+<ul>
+<li><b><b>MRML Nodes</b></b>
+<ul>
+<li>Each node has:
+<ul>
+<li>Unique ID and name</li>
+<li>Custom attributes</li>
+<li>Data-type-specific properties</li>
+
+</ul></li>
+<li><b><b>Node Types</b></b> include:
+<ul>
+<li>Image Volumes</li>
+<li><b>Meshes</b></li>
+<li>Point Sets</li>
+<li>Transformations</li>
+<li>and more&#x2026;</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</div>
+
+<div class="container vertical" style="--container-width: 60%;">
+
+<p>
+<b><b>Simple node creation in 3D Slicer</b></b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1|3-4|6-8|10-11|1-11"># Scrip: 001_simple_node_creation.py (ctrl+g in slicer)
+
+# Create a model node (Method I)
+modelNode = slicer.mrmlScene.AddNewNodeByClass('vtkMRMLModelNode')
+
+# Create a model node (Method II)
+modelNode = slicer.vtkMRMLModelNode()
+slicer.mrmlScene.AddNode(modelNode)
+
+# Create display node (regardless of the method)
+print(modelNode)
+</code></pre>
+</div>
+
+<p>
+<a href="https://apidocs.slicer.org/v5.8/classvtkMRMLNode.html">https://apidocs.slicer.org/v5.8/classvtkMRMLNode.html</a>
+</p>
+
+</div>
+</div>
+
+</section>
+<section id="slide-orgeed71a3" data-fullscreen>
+<h4 id="orgeed71a3">Understanding Data Components in 3D Slicer: VTK datasets (I)</h4>
+<div class="container horizontal" style="--container-width:100%;">
+<div class="container vertical" style="--container-width: 50%;">
+
+<p>
+<b><b>VTK Datasets</b></b>
+</p>
+<ul>
+<li>Data objects with an <b>organizing structure</b> and <b>associated data attributes</b></li>
+<li>The structure has two parts: <b>geometry</b> and <b>topology</b></li>
+<li>[ <b><b>Dataset Geometry</b></b> ] Specification of position in 3D space (<b>points</b>)</li>
+
+<li>[ <b><b>Dataset Topoology</b></b> ] The set of properties invariant under certain geometric transformations (<b>cells</b>)</li>
+
+</ul>
+</div>
+
+<div class="container vertical" style="--container-width: 50%;">
+
+
+<div id="org4abc000" class="figure">
+<p><img src="./img/vtk_datasets_1.png" alt="vtk_datasets_1.png" width="100%" />
+</p>
+</div>
+
+</div>
+</div>
+
+<p>
+<a href="https://examples.vtk.org/site/VTKBook/05Chapter5/#characterizing-visualization-data">https://examples.vtk.org/site/VTKBook/05Chapter5/#characterizing-visualization-data</a>
+</p>
+
+</section>
+<section id="slide-org532791b" data-fullscreen>
+<h4 id="org532791b">Understanding Data Components in 3D Slicer: VTK datasets (II)</h4>
+
+<div id="org6f32548" class="figure">
+<p><img src="./img/vtk_datasets_2.png" alt="vtk_datasets_2.png" width="100%" />
+</p>
+</div>
+
+<p>
+<a href="https://examples.vtk.org/site/VTKBook/05Chapter5/#54-cell-types">https://examples.vtk.org/site/VTKBook/05Chapter5/#54-cell-types</a>
+</p>
+
+</section>
+<section id="slide-orgaa1161a" data-fullscreen>
+<h4 id="orgaa1161a">Understanding Data Components in 3D Slicer: VTK datasets (III)</h4>
+
+<div id="orge1e463d" class="figure">
+<p><img src="./img/vtk_datasets_3.png" alt="vtk_datasets_3.png" width="80%" />
+</p>
+</div>
+
+<p>
+<a href="https://examples.vtk.org/site/VTKBook/05Chapter5/#dataset-representation">https://examples.vtk.org/site/VTKBook/05Chapter5/#dataset-representation</a>
+</p>
+
+</section>
+<section id="slide-orgbbfbd71" data-fullscreen>
+<h4 id="orgbbfbd71">Understanding Data Components in 3D Slicer: VTK datasets (IV)</h4>
+
+</section>
+<section id="slide-orgad41ad0" data-fullscreen>
+<h4 id="orgad41ad0"><code>vtkPolyData</code></h4>
+<ul>
+<li>Used for surface models (e.g., for visualization, not for simulation)</li>
+<li>Requires explicit representation of both geometry and topology.</li>
+
+<li><b>Geometry Representation</b>:</li>
+<li>Points are stored using the <code>vtkPoints</code> class.</li>
+
+<li><b>Cell Type Management</b>:
+<ul>
+<li><code>vtkPolyData</code> maintains four separate cell lists:
+<ul>
+<li><b>Vertices</b>: <code>vtkVertex</code>, <code>vtkPolyVertex</code>.</li>
+<li><b>Lines</b>: <code>vtkLine</code>, <code>vtkPolyLine</code>.</li>
+<li><b>Polygons</b>: <code>vtkTriangle</code>, <code>vtkQuad</code>, <code>vtkPolygon</code>.</li>
+<li><b>Triangle Strips</b>: <code>vtkTriangleStrip</code>.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+<p>
+<a href="https://examples.vtk.org/site/VTKBook/05Chapter5/#dataset-representation">https://examples.vtk.org/site/VTKBook/05Chapter5/#dataset-representation</a>
+</p>
+
+
+</section>
+<section id="slide-org2f65290" data-fullscreen>
+<h4 id="org2f65290"><code>vtkPolyData</code></h4>
+<div class="container horizontal" style="--container-width:100%;">
+<div class="container vertical" style="--container-width: 52%;">
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-2|4-6|8-9|11-12|14-16|18-23|1-23" style="max-height:900px;"># Script: 002_vtkpolydata_1.py (ctrl+g in slicer)
+#   requires the SlicerSOFA extension
+
+# Load the dataset
+import SampleData
+liverScene = SampleData.downloadSample('LiverSimulationScene')
+
+# Get model from MRML Scene
+modelNode = slicer.util.getNode('liver_dec')
+
+# Get polydata from model
+polyData = modelNode.GetPolyData()
+
+# Iterate over points in the mesh (geometry)
+for i in range(polyData.GetNumberOfPoints()):
+    print(polyData.GetPoint(i))
+
+# Iterate over cells in the mesh (topology)
+for i in range(polyData.GetNumberOfCells()):
+    print(polyData.GetCellType(i),
+          polyData.GetCell(i).GetPointId(0),
+          polyData.GetCell(i).GetPointId(1),
+          polyData.GetCell(i).GetPointId(2))
+</code></pre>
+</div>
+
+</div>
+<div class="container vertical" style="--container-width: 48%;">
+
+<p>
+<b><b>Output:</b></b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="txt" >(129.05188821670617, 25.76884416954813, 39.73223040375034)
+(118.80156312926272, 35.7303511720099, 36.28580029038706)
+(132.42859446014708, 38.59746416817071, 41.155659542019805)
+(129.12104482620379, 14.465276201463498, 48.71041794474367)
+...
+5 5 1 0
+5 2 0 1
+5 1 4 2
+5 2 4 10
+5 12 1 5
+...
+</code></pre>
+</div>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org80cb43a" data-fullscreen>
+<h4 id="org80cb43a"><code>vtkUnstructuredGrid</code></h4>
+<ul>
+<li>The most general VTK dataset type for representing complex topology and geometry</li>
+<li>Can represent tetrahedral meshes (e.g., used for simulations)</li>
+<li><b><b>Explicit Representation of Geometry and Topology</b></b>
+<ul>
+<li><b><b>Points</b></b> are stored using <b><b>vtkPoints</b></b></li>
+<li><b><b>Cells</b></b> are stored using <b><b>vtkCellArray</b></b></li>
+
+</ul></li>
+
+</ul>
+
+<p>
+<a href="https://examples.vtk.org/site/VTKBook/05Chapter5/#dataset-representation">https://examples.vtk.org/site/VTKBook/05Chapter5/#dataset-representation</a>
+</p>
+
+
+</section>
+<section id="slide-orge8f5099" data-fullscreen>
+<h4 id="orge8f5099"><code>vtkUnstructuredGrid</code></h4>
+<div class="container horizontal" style="--container-width:100%;">
+<div class="container vertical" style="--container-width: 52%;">
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-2|4-6|8-9|11-12|14-16|18-24|1-24" style="max-height:900px;"># Script: 003_vtkunstructuredgrid_1.py (ctrl+g in slicer)
+#   requires the SlicerSOFA extension
+
+# Load the dataset
+import SampleData
+liverScene = SampleData.downloadSample('RightLungLowTetra')
+
+# Get model from MRML Scene
+modelNode = slicer.util.getNode('RightLung')
+
+# Get the unstructured grid from model
+unstructuredGrid = modelNode.GetMesh()
+
+# Iterate over points in the mesh (geometry)
+for i in range(unstructuredGrid.GetNumberOfPoints()):
+    print(unstructuredGrid.GetPoint(i))
+
+# Iterate over cells in the mesh (topology)
+for i in range(unstructuredGrid.GetNumberOfCells()):
+    print(unstructuredGrid.GetCellType(i),
+          unstructuredGrid.GetCell(i).GetPointId(0),
+          unstructuredGrid.GetCell(i).GetPointId(1),
+          unstructuredGrid.GetCell(i).GetPointId(2),
+          unstructuredGrid.GetCell(i).GetPointId(3))
+</code></pre>
+</div>
+
+</div>
+<div class="container vertical" style="--container-width: 48%;">
+
+<p>
+<b><b>Output:</b></b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="txt" >(129.05188821670617, 25.76884416954813, 39.73223040375034)
+(118.80156312926272, 35.7303511720099, 36.28580029038706)
+(132.42859446014708, 38.59746416817071, 41.155659542019805)
+(129.12104482620379, 14.465276201463498, 48.71041794474367)
+...
+5 5 1 0
+5 2 0 1
+5 1 4 2
+5 2 4 10
+5 12 1 5
+...
+</code></pre>
+</div>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org704e131">
+<h3 id="org704e131">Understanding Data Components in SOFA</h3>
+<div class="outline-text-3" id="text-org704e131">
+</div>
+</section>
+<section id="slide-org5b5cfe3" data-fullscreen>
+<h4 id="org5b5cfe3">Understanding Data Components in SOFA (I)</h4>
+<ul>
+<li>All SOFA scenes start with the creation of a root node</li>
+<li>Plugins must be explicitly loaded (<code>RequiredPlugin</code> type nodes)</li>
+<li>Knowing which plugins are needed is a matter of knowing SOFA, and sometimes, trial and fail.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-2|3-4|6-7|9-18|21-25|1-25" style="max-height:900px;"># Script: 004_sofa_nodex.py (ctrl+g in slicer)
+#   requires the SlicerSOFA extension
+import Sofa.Core
+import numpy as np
+
+#Create the root node
+rootNode = Sofa.Core.Node('root')
+
+plugins=["Sofa.Component.IO.Mesh",
+         "Sofa.Component.StateContainer",
+         "Sofa.Component.Mapping.NonLinear",
+         "Sofa.Component.Topology.Container.Constant",
+         "Sofa.Component.Topology.Mapping",
+         #Other plugins
+         ]
+
+for plugin_name in plugins:
+    rootNode.addObject('RequiredPlugin', name=plugin_name)
+
+
+inputNode = rootNode.addChild('InputSurfaceNode')
+container = inputNode.addObject('TriangleSetTopologyContainer',
+                                name='Container',
+                                position=np.zeros(10*3).reshape(-1,3),
+                                triangles=np.zeros(100))
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org801c692" data-fullscreen>
+<h4 id="org801c692">Understanding Data Components in SOFA (II)</h4>
+<ul>
+<li>Nodes can be addressed by
+<ol>
+<li>Direct access through variables (e.g., <code>subnode</code>).</li>
+<li>Array notation (e.g., <code>node['subnode_name']</code>)</li>
+<li>Array notation with <code>.</code> separator (e.g., =node['subnode<sub>name.subsubnode</sub><sub>name</sub>']</li>
+
+</ol></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-2|3-4|6-7|9|11-14|16-21|1-21 " style="max-height:900px;"># Script: 005_sofa_nodes.py (ctrl+g in slicer)
+#   requires the SlicerSOFA extension
+import Sofa.Core
+import numpy as np
+
+#Create the root node
+rootNode = Sofa.Core.Node('root')
+
+# Required plugins can be added here
+
+inputNode = rootNode.addChild('InputSurfaceNode')
+container = inputNode.addObject('TriangleSetTopologyContainer',
+                                name='Container', position=np.zeros(10*3).reshape(-1,3),
+                                triangles=np.zeros(100))
+
+# Access to container
+print(container)
+print(rootNode['InputSurfaceNode']['Container'])
+print(rootNode['InputSurfaceNode.Container'])
+print(rootNode['Container']) #This won't work!
+print(inputNode['Container'])#This will work!
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org1f3ba86" data-fullscreen>
+<h4 id="org1f3ba86">Understanding Data Components in SOFA (III)</h4>
+<ul>
+<li>Node <b>data</b> read acces
+<ol>
+<li>Direct access through variables (e.g., <code>subnode.attribute.array()</code>).</li>
+<li>Array notation (e.g., <code>node['subnode_name']['attribute].array()</code>).</li>
+<li>Array notation with <code>.</code> separator (e.g., <code>node['subnode_name.subsubnode_name.attribute'].array()</code>).</li>
+
+</ol></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-2|3-4|6-7|9|11-14|16-21|1-21 " style="max-height:900px;"># Script: 006_sofa_nodes.py (ctrl+g in slicer)
+#   requires the SlicerSOFA extension
+import Sofa.Core
+import numpy as np
+
+#Create the root node
+rootNode = Sofa.Core.Node('root')
+
+# Required plugins can be added here
+
+inputNode = rootNode.addChild('InputSurfaceNode')
+container = inputNode.addObject('TriangleSetTopologyContainer',
+                                name='Container', position=np.zeros(10*3).reshape(-1,3),
+                                triangles=np.zeros(100))
+
+# Access to container geometry
+print(container.position.array())
+print(rootNode['InputSurfaceNode']['Container']['position'].array())
+print(rootNode['InputSurfaceNode.Container.position'].array())
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org9216c76" data-fullscreen>
+<h4 id="org9216c76">Understanding Data Components in SOFA (IV)</h4>
+<ul>
+<li>Node <b>data</b> write
+<ol>
+<li>Direct access through variables and attributes (e.g., <code>subnode.attribute</code>). For scalar values</li>
+<li>Through <code>.writeable()</code> arrays. For vector data.</li>
+
+</ol></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-2|3-4|6-7|9|11-14|16-20|1-20 " style="max-height:900px;"># Script: 007_sofa_nodes.py (ctrl+g in slicer)
+#   requires the SlicerSOFA extension
+import Sofa.Core
+import numpy as np
+
+#Create the root node
+rootNode = Sofa.Core.Node('root')
+
+# Required plugins can be added here
+
+inputNode = rootNode.addChild('InputSurfaceNode')
+container = inputNode.addObject('TriangleSetTopologyContainer',
+                                name='Container', position=np.zeros(10*3).reshape(-1,3),
+                                triangles=np.zeros(100))
+
+# Access to container geometry
+rootNode.dt = 0.1
+with container.position.writeable() as geometry:
+    geometry[:] = np.random.rand(10*3).reshape(-1,3) #Note: Copy!!
+    geometry[0][0] = 10
+</code></pre>
+</div>
+<p>
+<a href="https://sofapython3.readthedocs.io/en/latest/content/modules/Sofa/generated/Sofa.Core/classes/Sofa.Core.Data.html">https://sofapython3.readthedocs.io/en/latest/content/modules/Sofa/generated/Sofa.Core/classes/Sofa.Core.Data.html</a>
+</p>
+
+</section>
+<section id="slide-org10ca5ce">
+<h3 id="org10ca5ce">Using <code>numpy</code> arrays to Communicate Slicer and SOFA</h3>
+<div class="outline-text-3" id="text-org10ca5ce">
+</div>
+</section>
+<section id="slide-org2837af6" data-fullscreen>
+<h4 id="org2837af6">Using <code>numpy</code> arrays to Communicate Slicer and SOFA (I)</h4>
+<ul>
+<li><b>NumPy</b> is a powerful library for numerical computations in Python.</li>
+<li><b>ndarray</b> is the core data structure in NumPy, representing multidimensional homogeneous arrays.</li>
+<li>Arrays can be created from lists or tuples, or functions like <code>np.zeros</code>, <code>np.ones</code>, <code>np.arange</code>, <code>np.linspace</code>.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-8">import numpy as np
+
+# Create a 1D array
+a = np.array([1, 2, 3, 4, 5])
+
+# Create a 2D array
+b = np.array([[1, 2, 3], [4, 5, 6]])
+
+print("1D array:", a)
+print("2D array:\n", b)
+</code></pre>
+</div>
+
+<p>
+<b>Output:</b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="text" >1D array: [1 2 3 4 5]
+2D array:
+ [[1 2 3]
+ [4 5 6]]
+</code></pre>
+</div>
+<p>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html">https://numpy.org/doc/stable/reference/generated/numpy.array.html</a>
+</p>
+
+</section>
+<section id="slide-orgcb0760c" data-fullscreen>
+<h4 id="orgcb0760c">Using <code>numpy</code> arrays to Communicate Slicer and SOFA (II)</h4>
+<ul>
+<li>NumPy arrays are stored in contiguous blocks of memory, enabling efficient computation.</li>
+<li>Each array has a data type (<code>dtype</code>) that defines the type of elements in the array.</li>
+<li>Common dtypes include <code>np.int32</code>, <code>np.float64</code>, etc.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-7" style="max-height:900px;">import numpy as np
+
+a = np.array([1, 2, 3], dtype=np.int32)
+print("Array:", a)
+print("dtype:", a.dtype)
+print("Item size:", a.itemsize)
+print("Total size (nbytes):", a.nbytes)
+</code></pre>
+</div>
+
+<p>
+<b>Output:</b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="text" >Array: [1 2 3]
+dtype: int32
+Item size: 4
+Total size (nbytes): 12
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgd992e3f" data-fullscreen>
+<h4 id="orgd992e3f">Using <code>numpy</code> arrays to Communicate Slicer and SOFA (III)</h4>
+<ul>
+<li>Slices are <b>views</b>, not copies, meaning they reference the same memory. One can select subsets of data efficiently without copying.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-17" style="max-height:900px;">import numpy as np
+
+a = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])
+
+# Select first row
+row = a[0, :]
+print("First row:", row)
+
+# Select first column
+col = a[:, 0]
+print("First column:", col)
+
+# Select a subarray
+subarray = a[0:2, 1:3]
+print("Subarray:\n", subarray)
+</code></pre>
+</div>
+
+<p>
+<b>Output:</b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="text" >First row: [1 2 3]
+First column: [1 4 7]
+Subarray:
+ [[2 3]
+ [5 6]]
+</code></pre>
+</div>
+<p>
+<a href="https://numpy.org/doc/stable/user/basics.indexing.html">https://numpy.org/doc/stable/user/basics.indexing.html</a>
+</p>
+
+</section>
+<section id="slide-org5c1f22e" data-fullscreen>
+<h4 id="org5c1f22e">Using <code>numpy</code> arrays to Communicate Slicer and SOFA (IV)</h4>
+<ul>
+<li>Slices of arrays create <b>views</b>, not copies.</li>
+<li>Modifying a view will affect the original array.</li>
+<li>Use the <code>copy()</code> method to create a copy when needed.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-17" style="max-height:900px;">import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+# Slicing creates a view
+b = a[1:4]
+print("Original slice:", b)
+
+b[0] = 99
+print("Modified slice:", b)
+print("Original array after modifying slice:", a)
+
+# Using copy to create a separate array
+c = a[1:4].copy()
+c[0] = 100
+print("Copy modified:", c)
+print("Original array after modifying copy:", a)
+</code></pre>
+</div>
+
+<p>
+<b>Output:</b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="text" >Original slice: [2 3 4]
+Modified slice: [99  3  4]
+Original array after modifying slice: [ 1 99  3  4  5]
+Copy modified: [100   3   4]
+Original array after modifying copy: [ 1 99  3  4  5]
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgf3cbca9" data-fullscreen>
+<h4 id="orgf3cbca9">Using <code>numpy</code> arrays to Communicate Slicer and SOFA (V)</h4>
+<ul>
+<li>Assigning to a slice modifies the original array.</li>
+<li>Using <code>a[:] = something</code> replaces the contents in-place without changing the array object.</li>
+<li>In-place modifications can be efficient and sometimes necessary, as they preserve the size of the original array.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-16" style="max-height:900px;">import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+# Assigning a new array to 'a' creates a new object
+a = np.array([10, 20, 30, 40, 50])
+print("After assignment, 'a' is:", a)
+
+# Using a slice to modify 'a' in-place
+a[:] = [100, 200, 300, 400, 500]
+print("After in-place modification, 'a' is:", a)
+
+# Verifying that the array object is the same
+b = a
+a[:] = [1, 2, 3, 4, 5]
+print("After modifying 'a', 'b' is also changed:", b)
+</code></pre>
+</div>
+
+<p>
+<b>Output:</b>
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="text" >After assignment, 'a' is: [10 20 30 40 50]
+After in-place modification, 'a' is: [100 200 300 400 500]
+After modifying 'a', 'b' is also changed: [1 2 3 4 5]
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org98ee8ae">
+<h3 id="org98ee8ae">Making a Simulation Tick</h3>
+<div class="outline-text-3" id="text-org98ee8ae">
+</div>
+</section>
+<section id="slide-orga6b5a31">
+<h4 id="orga6b5a31">Making a Simulation Tick (I)</h4>
+<ul>
+<li>Advancing the simulation requires an explicit call to <code>Sofa.Simulation.animate</code></li>
+<li>Non-interactive simulations can utilize a simple loop</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-5" style="max-height:900px;">count = 0
+while count &lt; 350: #350 iterations
+    count += 1
+    Sofa.Simulation.animate(root, root.dt.value)
+    slicer.app.processEvents() #Let Slicer process its own events
+</code></pre>
+</div>
+<p>
+<a href="https://github.com/pieper/SlicerSOFA/blob/main/Experiments/scene_with_attachments.py">https://github.com/pieper/SlicerSOFA/blob/main/Experiments/scene_with_attachments.py</a>
+</p>
+
+</section>
+<section id="slide-org42f0bbb">
+<h4 id="org42f0bbb">Making a Simulation Tick (II)</h4>
+<ul>
+<li>Advancing the simulation requires an explicit call to <code>Sofa.Simulation.animate</code></li>
+<li>interactive simulations can utilize a simple loop</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1|3-4|6-8|10-11|13-14|16|18-19|21-25|1-25" style="max-height:900px;">from qt import QTimer
+
+# Initialization code goes here
+# ...
+
+iteration = 0
+iterations = 30
+simulating = True
+
+def updateSimulation(): # Callback function
+    global iteration, iterations, simulating
+
+    # Update from Slicer to SOFA goes here
+    # ...
+
+    Sofa.Simulation.animate(rootSofaNode, rootSofaNode.dt.value)
+
+    # Update from SOFA to Slicer goes here
+    # ...
+
+    # Iteration management
+    iteration += 1
+    simulating = iteration &lt; iterations
+    if simulating:
+        QTimer.singleShot(10, updateSimulation)
+</code></pre>
+</div>
+<p>
+<a href="https://doc.qt.io/qt-6/qtimer.html#singleShot">https://doc.qt.io/qt-6/qtimer.html#singleShot</a>
+</p>
+
+
+</section>
+<section id="slide-org329c099">
+<h3 id="org329c099">Complete Example</h3>
+<div class="outline-text-3" id="text-org329c099">
+</div>
+</section>
+<section id="slide-org10de527">
+<h4 id="org10de527">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-3|5-8|10-12|1-12" style="max-height:900px;"># Script: 008_example_1.py
+#  - requires SlicerSOFA
+#  - requires adjusting path for mesh files
+
+import numpy
+import Sofa
+import Sofa.Core
+import Sofa.Simulation
+
+from slicer.util import arrayFromModelPoints
+from slicer.util import arrayFromModelPolyIds # For Polydata cells
+from SlicerSofaUtils.Mappings import arrayFromModelGridCells # For tetrahedral unstructured grid cells
+</code></pre>
+</div>
+<ul>
+<li>Importing essential libraries</li>
+<li>Importing utility libraries from <code>slicer.util</code> from <code>SlicerSofaUtils.Mappings</code></li>
+
+</ul>
+
+</section>
+<section id="slide-org462bee5">
+<h4 id="org462bee5">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="5-12|14-19|21-24|1-24" style="max-height:900px;">############################################
+###### Simulation Hyperparameters
+############################################
+
+# Input data parameters
+liver_mesh_file = "/tmp/originalMesh.vtk"
+sphere_surface_file = "/tmp/biggerCavity.obj"
+originalMeshNode = None
+sphereNode = None
+liver_mass = 30.0
+liver_youngs_modulus = 1.0 * 1000.0 * 0.001
+liver_poisson_ratio = 0.45
+
+# Simulatlon hyperparameters
+root = None
+dt = 0.01
+collision_detection_method = "LocalMinDistance"
+alarm_distance = 10.0
+contact_distance = 0.8
+
+# Simulation control parameters
+iteration = 0
+iterations = 30
+simulating = True
+</code></pre>
+</div>
+</section>
+<section id="slide-orgc5bb66d">
+<h4 id="orgc5bb66d">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="4-7|8|1-8" style="max-height:900px;">############################################
+###### Load Simulation Data
+############################################
+def loadSimulationData():
+    global originalMeshNode
+    originalMeshNode = slicer.util.loadModel(liver_mesh_file)
+    sphereNode = slicer.util.loadModel(sphere_surface_file)
+    sphereNode.GetDisplayNode().SetRepresentation(slicer.vtkMRMLDisplayNode.WireframeRepresentation)
+</code></pre>
+</div>
+</section>
+<section id="slide-org9cc0d24">
+<h4 id="org9cc0d24">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="4-8|10-30|31-33|1-33" style="max-height:900px;">############################################
+###### Create Sofa Scene
+############################################
+def createSofaScene():
+    global root
+
+    # Create a root node
+    root = Sofa.Core.Node("root")
+
+    plugin_list = [
+        "MultiThreading",
+        "Sofa.Component.AnimationLoop",
+        "Sofa.Component.Collision.Detection.Algorithm",
+        "Sofa.Component.Collision.Detection.Intersection",
+        "Sofa.Component.Collision.Geometry",
+        "Sofa.Component.Collision.Response.Contact",
+        "Sofa.Component.Constraint.Lagrangian.Correction",
+        "Sofa.Component.Constraint.Lagrangian.Solver",
+        "Sofa.Component.IO.Mesh",
+        "Sofa.Component.LinearSolver.Direct",
+        "Sofa.Component.Mass",
+        "Sofa.Component.MechanicalLoad",
+        "Sofa.Component.ODESolver.Backward",
+        "Sofa.Component.SolidMechanics.FEM.Elastic",
+        "Sofa.Component.StateContainer",
+        "Sofa.Component.Topology.Container.Dynamic",
+        "Sofa.Component.Topology.Mapping",
+        "Sofa.Component.Visual",
+        "Sofa.Component.Constraint.Projective",
+    ]
+    for plugin in plugin_list:
+        root.addObject("RequiredPlugin", name=plugin)
+
+</code></pre>
+</div>
+</section>
+<section id="slide-orga73d4fa">
+<h4 id="orga73d4fa">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="2-4|6-17|1-17" style="max-height:900px;">#def createSofaScene() continues
+    # The simulation scene
+    with root.gravity.writeable() as gravity:
+        gravity[:] = np.array([-9.81 * 10.0, 0.0, 0.0])
+    root.dt = dt
+
+    root.addObject("FreeMotionAnimationLoop")
+    root.addObject("VisualStyle",
+                   displayFlags=["showForceFields", "showBehaviorModels", "showCollisionModels", "showWireframe"])
+
+    root.addObject("CollisionPipeline")
+    root.addObject("ParallelBruteForceBroadPhase")
+    root.addObject("ParallelBVHNarrowPhase")
+    root.addObject(collision_detection_method, alarmDistance=alarm_distance, contactDistance=contact_distance)
+
+    root.addObject("CollisionResponse", response="FrictionContactConstraint", responseParams=0.001)
+    root.addObject("GenericConstraintSolver")
+
+    scene_node = root.addChild("scene")
+</code></pre>
+</div>
+</section>
+<section id="slide-org846e97b">
+<h4 id="org846e97b">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-23|5-7|13-14|1-23" style="max-height:900px;">#def createSofaScene() continues
+    #### Liver ####
+    liver_node = scene_node.addChild("liver")
+
+    liver_node.addObject('TetrahedronSetTopologyContainer', name="Container",
+                         position=arrayFromModelPoints(originalMeshNode),
+                         tetrahedra=arrayFromModelGridCells(originalMeshNode))
+
+    liver_node.addObject("TetrahedronSetTopologyModifier")
+    liver_node.addObject("EulerImplicitSolver")
+    liver_node.addObject("SparseLDLSolver", template="CompressedRowSparseMatrixMat3x3d")
+    liver_node.addObject("MechanicalObject")
+    liver_node.addObject("TetrahedralCorotationalFEMForceField",
+                         youngModulus=liver_youngs_modulus,
+                         poissonRatio=liver_poisson_ratio)
+    liver_node.addObject("UniformMass", totalMass=liver_mass)
+    liver_node.addObject("LinearSolverConstraintCorrection")
+
+    liver_collision_node = liver_node.addChild("collision")
+    liver_collision_node.addObject("TriangleSetTopologyContainer")
+    liver_collision_node.addObject("TriangleSetTopologyModifier")
+    liver_collision_node.addObject("Tetra2TriangleTopologicalMapping")
+    liver_collision_node.addObject("PointCollisionModel")
+    liver_collision_node.addObject("LineCollisionModel")
+    liver_collision_node.addObject("TriangleCollisionModel")
+</code></pre>
+</div>
+</section>
+<section id="slide-org87e9626">
+<h4 id="org87e9626">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="1-13|5|1-13" style="max-height:900px;">#def createSofaScene() continues
+    #### Sphere ####
+    sphere_node = scene_node.addChild("sphere")
+    sphere_node.addObject("MeshOBJLoader", filename=sphere_surface_file, scale=1.0)
+    sphere_node.addObject("TriangleSetTopologyContainer", src=sphere_node.MeshOBJLoader.getLinkPath())
+    sphere_node.addObject("TriangleSetTopologyModifier")
+    sphere_node.addObject("MechanicalObject")
+    # NOTE: The important thing is to set bothSide=True for the collision models,
+    # so that both sides of the triangle are considered for collision.
+    sphere_node.addObject("TriangleCollisionModel", bothSide=True)
+    sphere_node.addObject("PointCollisionModel")
+    sphere_node.addObject("LineCollisionModel")
+    sphere_node.addObject("FixedProjectiveConstraint")
+</code></pre>
+</div>
+</section>
+<section id="slide-orgd8991fe">
+<h4 id="orgd8991fe">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="3-4|6-7|1-7" style="max-height:900px;">#def createSofaScene() continues
+
+    # Initialize the simulation
+    Sofa.Simulation.init(root)
+
+    with sphere_node.MechanicalObject.position.writeable() as sphereArray:
+        sphereArray *= [-1,-1,1] #Note the LPS-to-RAS transform here!!
+</code></pre>
+</div>
+<ul>
+<li>Note that <b>part of the data</b> for the simulation is loaded by <b>SOFA</b></li>
+<li>SOFA-loaded data and Slicer-loaded data are not in the same coordinate frame</li>
+<li>Requires a LPS-to-RAS conversion</li>
+
+</ul>
+
+</section>
+<section id="slide-org7f2748d">
+<h4 id="org7f2748d">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="4-5|7-8|10-14|16-15|1-25" style="max-height:900px;">############################################
+###### Update Simulation
+############################################
+def updateSimulation():
+    global iteration, iterations, simulating, root, originalMeshNode
+
+    for step in range(10):
+        Sofa.Simulation.animate(root, root.dt.value)
+
+    # update model from mechanical state
+    meshPointsArray = root['scene.liver'].getMechanicalState().position.array()
+    modelPointsArray = slicer.util.arrayFromModelPoints(originalMeshNode)
+    modelPointsArray[:] = meshPointsArray #Note the slice operator (copy!)
+    slicer.util.arrayFromModelPointsModified(originalMeshNode)
+
+    # iteration management
+    iteration += 1
+    simulating = iteration &lt; iterations
+    if iteration % 10 == 0:
+        print(f"Iteration {iteration}")
+    if simulating:
+        qt.QTimer.singleShot(10, updateSimulation)
+    else:
+        print("Simlation stopped")
+
+</code></pre>
+</div>
+</section>
+<section id="slide-org7180845">
+<h4 id="org7180845">Complete Example</h4>
+<div class="org-src-container">
+
+<pre   ><code class="python" data-line-numbers="4-6|1-6" style="max-height:900px;">############################################
+###### Execution flowRequires a LPS-to-RAS conversion
+############################################
+loadSimulationData()
+createSofaScene()
+updateSimulation()
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight, RevealMath],
+width:1920, height:1080
+});
+
+</script>
+</body>
+</html>
