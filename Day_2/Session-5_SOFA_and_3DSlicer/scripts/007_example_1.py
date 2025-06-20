@@ -15,8 +15,8 @@ from SlicerSofaUtils.Mappings import arrayFromModelGridCells
 ############################################
 
 # Input data parameters
-liver_mesh_file = "/tmp/originalMesh.vtk"
-sphere_surface_file = "/tmp/biggerCavity.obj"
+liver_mesh_file = "A:/Projects/UC3M_Lectures/2025_Workshop_3DSlicer-SOFA/Day_2/Session-5_SOFA_and_3DSlicer/datasets/originalMesh.vtk"
+sphere_surface_file = "A:/Projects/UC3M_Lectures/2025_Workshop_3DSlicer-SOFA/Day_2/Session-5_SOFA_and_3DSlicer/datasets/biggerCavity.obj"
 originalMeshNode = None
 sphereNode = None
 liver_mass = 30.0
@@ -169,5 +169,5 @@ def updateSimulation():
 ###### Execution flow
 ############################################
 loadSimulationData()
-createSofaScene()
-updateSimulation()
+#createSofaScene()
+#updateSimulation()
