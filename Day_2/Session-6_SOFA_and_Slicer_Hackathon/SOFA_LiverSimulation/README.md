@@ -1,4 +1,4 @@
-# 🧪 Hackathon Solution – Soft Tissue Simulation
+# 🧪 Hackathon – Soft Tissue Simulation
 
 ## 📁 Solution folder
 
